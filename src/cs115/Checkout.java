@@ -1,6 +1,5 @@
 package cs115;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +16,7 @@ public class Checkout {
     public double totalCost() {
         double total = 0;
         for(DessertItem d : desserts) {
+            total += d.findSalesTax();
             total += d.calculateItemCost();
         }
 
@@ -26,8 +26,9 @@ public class Checkout {
     public void printReceipt() {
         System.out.println("Number of items: " + desserts.size() + "\n");
         for(DessertItem d : desserts) {
+            System.out.printf("Item tax: %.2f%n",d.findSalesTax());
             System.out.printf("%.2f %s%n", d.calculateItemCost(), d.getName());
         }
-        System.out.println("\nTotal cost: " + totalCost() + "\n");
+        System.out.printf("%nTotal cost: %.2f", totalCost());
     }
 }
