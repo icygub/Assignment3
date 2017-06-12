@@ -19,4 +19,9 @@ public class Candy extends DessertItem {
         double cost = weight * pricePerPound;
         return cost;
     }
+
+    @Override
+    public double findSalesTax() {
+        return calculateItemCost() * 0.1;
+    }
 }

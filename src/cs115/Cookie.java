@@ -6,9 +6,9 @@ package cs115;
 public class Cookie extends DessertItem {
 
     private int number;
-    private int pricePerDozen;
+    private double pricePerDozen;
 
-    public Cookie(String name, int number, int pricePerDozen) {
+    public Cookie(String name, int number, double pricePerDozen) {
         super(name);
         this.number = number;
         this.pricePerDozen = pricePerDozen;
@@ -17,7 +17,12 @@ public class Cookie extends DessertItem {
 
     @Override
     public double calculateItemCost() {
-        double pricePerCookie = pricePerDozen / 12;
+        double pricePerCookie = pricePerDozen / 12.0;
         return number * pricePerCookie;
+    }
+
+    @Override
+    public double findSalesTax() {
+        return calculateItemCost() * 0.1;
     }
 }

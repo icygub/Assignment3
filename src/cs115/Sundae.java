@@ -19,4 +19,9 @@ public class Sundae extends IceCream{
     public double calculateItemCost() {
         return super.calculateItemCost() + costOfTopping;
     }
+
+    @Override
+    public double findSalesTax() {
+        return calculateItemCost() * 0.1;
+    }
 }

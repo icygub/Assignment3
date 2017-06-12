@@ -16,4 +16,9 @@ public class IceCream extends DessertItem {
     public double calculateItemCost() {
         return cost;
     }
+
+    @Override
+    public double findSalesTax() {
+        return calculateItemCost() * 0.1;
+    }
 }

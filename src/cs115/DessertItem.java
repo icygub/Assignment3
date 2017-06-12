@@ -13,9 +13,7 @@ public abstract class DessertItem {
 
     public abstract double calculateItemCost();
 
-    public double findSalesTax() {
-        return calculateItemCost() * 0.1;
-    };
+    public abstract double findSalesTax();
 
     public String getName() {
         return name;
